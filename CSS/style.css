@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+  color: #fff;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(160, 120, 168);
+}
+
+[class*=__container] {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 800px;
+  height: 90vh;
+  background: rgb(34, 33, 33);
+  border-radius: 12px;
+}
+.main.scroll {
+  overflow-y: scroll;
+}
+
+.header-main__body {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-main__title {
+  font-size: 34px;
+}
+.header-main__clear-button {
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  color: rgb(133, 63, 162);
+  border: 2px solid rgb(133, 63, 162);
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+.header-main__clear-button:hover {
+  background-color: rgb(133, 63, 162);
+  color: #fff;
+}
+
+.add-task__body {
+  position: relative;
+  width: 100%;
+}
+.add-task__button {
+  display: block;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.add-task__button:hover {
+  color: rgb(171, 97, 202);
+}
+.add-task__button:hover::before, .add-task__button:hover::after {
+  background-color: #fff;
+}
+.add-task__button:hover .add-task__cross::before {
+  visibility: visible;
+  opacity: 1;
+}
+.add-task__button.active {
+  display: none;
+}
+.add-task__button .add-task__cross {
+  font-size: 24px;
+  margin-right: 6px;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+.add-task__button .add-task__cross::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 100px;
+  left: calc(50% - 9px);
+  top: calc(50% - 8px);
+  background: rgb(171, 97, 202);
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}
+.add-task__form {
+  margin-top: 10px;
+  display: none;
+}
+.add-task__form.active {
+  display: block;
+}
+.add-task__form-inner {
+  border: 1px solid rgb(174, 156, 156);
+  border-radius: 12px;
+}
+.add-task__title {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding: 10px 10px;
+  background-color: rgb(34, 33, 33);
+  color: #fff;
+  border-radius: 12px;
+}
+.add-task__title::-moz-placeholder {
+  color: rgb(140, 122, 122);
+}
+.add-task__title:-ms-input-placeholder {
+  color: rgb(140, 122, 122);
+}
+.add-task__title::placeholder {
+  color: rgb(140, 122, 122);
+}
+.add-task__description {
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  resize: none;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  background-color: rgb(34, 33, 33);
+  color: #fff;
+  border-radius: 12px;
+}
+.add-task__description::-moz-placeholder {
+  color: rgb(123, 105, 105);
+}
+.add-task__description:-ms-input-placeholder {
+  color: rgb(123, 105, 105);
+}
+.add-task__description::placeholder {
+  color: rgb(123, 105, 105);
+}
+.add-task__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px;
+}
+.add-task__cansel-button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: rgb(236, 229, 229);
+  border: none;
+  cursor: pointer;
+}
+.add-task__cansel-button:hover {
+  background-color: rgb(210, 196, 196);
+}
+.add-task__add-button {
+  margin-left: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: rgb(191, 41, 41);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.add-task__add-button:hover {
+  background-color: rgb(172, 33, 33);
+}
+
+.tasks__body {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.task {
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(78, 78, 78);
+  display: flex;
+  justify-content: space-between;
+}
+.task__title {
+  font-size: 20px;
+  color: #fff;
+}
+.task__title.done {
+  text-decoration: line-through;
+  color: rgb(175, 162, 162);
+}
+.task__description {
+  margin-left: 25px;
+  font-size: 16px;
+  color: rgb(218, 203, 203);
+}
+.task__delete-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

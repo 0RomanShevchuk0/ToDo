@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../CSS/reset.css">
+	<link rel="stylesheet" href="../CSS/style.css">
+	<script defer src="../JS/script.js"></script>
+	<script src="https://kit.fontawesome.com/c682a1c8e0.js" crossorigin="anonymous"></script>
+	<title>To do</title>
+</head>
+<body>
+	<div class="wrapper">
+		<main class="main" id="main">
+
+			<!--? Tasks -->
+			<div class="main__header header-main">
+				<div class="header-main__container">
+					<div class="header-main__body">
+						<h1 class="header-main__title">Tasks</h1>
+						<button class="header-main__clear-button" id="clear-button">Delete completed</button>
+					</div>
+				</div>
+			</div>
+			
+			<section class="main__tasks tasks">
+				<div class="tasks__container">
+					<div class="tasks__body" id="tasks"></div>
+				</div>
+			</section>
+
+			<section class="main__task-add add-task">
+				<div class="add-task__container">
+					<div class="add-task__body">
+						
+						<!--? Add button -->
+						<div class="add-task__button-elements">
+							<h3 class="add-task__button" id="add-task-button"> <span class="add-task__cross">
+								<i class="fa-light fa-plus"></i></span> Add task</h3>
+						</div>
+
+						<!--? Active add form -->
+						<div class="add-task__form" id="add-task__form">
+							<div class="add-task__form-inner">
+								<input class="add-task__title" id="add-task__title" type="text" placeholder="Task name">
+								<textarea class="add-task__description" id="add-task__description" type="text" placeholder="Description"></textarea>
+							</div>
+							<div class="add-task__buttons">
+								<button class="add-task__cansel-button" id="add-task__cansel-button">Cansel</button>
+								<button class="add-task__add-button" id="add-task__add-button">Add task</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		</main>
+	</div>
+</body>
+</html>
