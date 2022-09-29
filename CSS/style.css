@@ -18,11 +18,25 @@ html, body {
   margin: 0 auto;
 }
 
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(84, 79, 79);
+  border-radius: 0px 12px 0px 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(154, 142, 142);
+  border-radius: 8px;
+}
+
 .main {
   width: 800px;
   height: 90vh;
   background: rgb(34, 33, 33);
-  border-radius: 12px;
+  border-radius: 12px 12px 0px 0px;
 }
 .main.scroll {
   overflow-y: scroll;
@@ -35,21 +49,6 @@ html, body {
 }
 .header-main__title {
   font-size: 34px;
-}
-.header-main__clear-button {
-  cursor: pointer;
-  background-color: #fff;
-  border: none;
-  border-radius: 8px;
-  color: rgb(133, 63, 162);
-  border: 2px solid rgb(133, 63, 162);
-  font-size: 16px;
-  font-weight: 700;
-  transition: 0.3s ease-in-out;
-}
-.header-main__clear-button:hover {
-  background-color: rgb(133, 63, 162);
-  color: #fff;
 }
 
 .add-task__body {
@@ -191,8 +190,14 @@ html, body {
   display: flex;
   justify-content: space-between;
 }
+.task__header {
+  display: flex;
+  align-items: flex-start;
+}
 .task__title {
+  margin-left: 10px;
   font-size: 20px;
+  line-height: 24px;
   color: #fff;
 }
 .task__title.done {
@@ -202,7 +207,10 @@ html, body {
 .task__description {
   margin-left: 25px;
   font-size: 16px;
+  line-height: 20px;
   color: rgb(218, 203, 203);
+  word-wrap: break-word;
+  max-width: 600px;
 }
 .task__delete-button {
   background: none;
@@ -210,4 +218,48 @@ html, body {
   font-size: 18px;
   color: #fff;
   cursor: pointer;
+}
+
+.footer {
+  width: 800px;
+  background-color: rgb(34, 33, 33);
+  border-radius: 0px 0px 12px 12px;
+}
+.footer__body {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px 25px;
+}
+.footer__tasks-left {
+  width: 100px;
+  font-size: 18px;
+}
+.footer__sort-list {
+  width: 100px;
+  display: flex;
+}
+.footer__sort-category {
+  cursor: pointer;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(34, 33, 33);
+}
+.footer__sort-category.active {
+  border-color: rgb(166, 150, 150);
+  background-color: rgba(228, 215, 215, 0.1);
+}
+.footer__clear-button {
+  text-align: right;
+  width: 200px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
+.footer__clear-button:hover {
+  color: rgb(171, 97, 202);
 }/*# sourceMappingURL=style.css.map */

@@ -12,18 +12,19 @@
 </head>
 <body>
 	<div class="wrapper">
+
 		<main class="main" id="main">
 
-			<!--? Tasks -->
+			<!--? Header -->
 			<div class="main__header header-main">
 				<div class="header-main__container">
 					<div class="header-main__body">
 						<h1 class="header-main__title">Tasks</h1>
-						<button class="header-main__clear-button" id="clear-button">Delete completed</button>
 					</div>
 				</div>
 			</div>
 			
+			<!--? Tasks -->
 			<section class="main__tasks tasks">
 				<div class="tasks__container">
 					<div class="tasks__body" id="tasks"></div>
@@ -55,8 +56,22 @@
 					</div>
 				</div>
 			</section>
-
 		</main>
+
+		<footer class="footer">
+				<div class="footer__body">
+					<div class="footer__tasks-left" id="tasks-left"></div>
+					<div class="footer__tasks-sort">
+						<ul class="footer__sort-list" id="sort-list">
+							<li class="footer__sort-category" id="sort-categoty">All</li>
+							<li class="footer__sort-category" id="sort-categoty">Active</li>
+							<li class="footer__sort-category" id="sort-categoty">Complited</li>
+						</ul>
+					</div>
+					<button class="footer__clear-button" id="clear-button">Clear completed</button>
+				</div>				
+		</footer>
+
 	</div>
 </body>
 </html>

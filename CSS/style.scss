@@ -19,17 +19,30 @@ html,body{
 	margin: 0 auto;
 }
 
+//* Scroll-bar
+::-webkit-scrollbar{
+	width: 20px;
+}
+::-webkit-scrollbar-track{
+	background: rgb(84, 79, 79);
+	border-radius: 0px 12px 0px 0px;
+}
+::-webkit-scrollbar-thumb{
+	background: rgb(154, 142, 142);
+	border-radius: 8px;
+}
 
 
 .main {
 	width: 800px;
 	height: 90vh;
 	background: rgb(34, 33, 33);
-	border-radius: 12px;
+	border-radius: 12px 12px 0px 0px;
 	
 	&.scroll{
 		overflow-y: scroll;
 	}
+
 }
 
 .header-main {
@@ -42,23 +55,6 @@ html,body{
 
 	&__title {
 		font-size: 34px;
-	}
-
-	&__clear-button{
-		cursor: pointer;
-		background-color: #fff;
-		border: none;
-		border-radius: 8px;
-		color: rgb(133, 63, 162);
-		border: 2px solid rgb(133, 63, 162);
-		font-size: 16px;
-		font-weight: 700;
-		transition: .3s ease-in-out;
-
-		&:hover{
-			background-color: rgb(133, 63, 162);
-			color: #fff;
-		}
 	}
 }
 
@@ -221,11 +217,18 @@ html,body{
 	display: flex;
 	justify-content: space-between;
 
+	&__header{
+		display: flex;
+		align-items: flex-start;
+	}
+
 	&__checkbox {
 	}
 
 	&__title {
+		margin-left: 10px;
 		font-size: 20px;
+		line-height: 24px;
 		color: #fff;
 
 		&.done{
@@ -237,7 +240,10 @@ html,body{
 	&__description {
 		margin-left: 25px;
 		font-size: 16px;
+		line-height: 20px;
 		color: rgb(218, 203, 203);
+		word-wrap: break-word;
+		max-width: 600px;
 	}
 
 	&__delete-button{
@@ -250,3 +256,53 @@ html,body{
 }
 
 
+.footer {
+	width: 800px;
+	background-color: rgb(34, 33, 33);
+	border-radius: 0px 0px 12px 12px;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding: 15px 25px;
+	}
+
+	&__tasks-left {
+		width: 100px;
+		font-size: 18px;
+	}
+
+	&__sort-list {
+		width: 100px;
+		display: flex;
+	}
+
+	&__sort-category {
+		cursor: pointer;
+		font-size: 18px;
+		box-sizing: border-box;
+		padding: 5px 10px;
+		border-radius: 6px;
+		border: 1px solid rgb(34, 33, 33);
+
+		&.active{
+			border-color: rgb(166, 150, 150);
+			background-color: rgba(228, 215, 215, .1);
+		}
+	}
+
+	&__clear-button{
+		text-align: right;
+		width: 200px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		color: #fff;
+		font-size: 18px;
+
+		&:hover{
+			color: rgb(171, 97, 202);
+		}
+	}
+}
