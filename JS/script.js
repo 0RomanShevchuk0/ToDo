@@ -81,7 +81,7 @@ function init() {
 	appendContent(fragment);
 
 	tasksCount++;
-	tasksLeft()
+	tasksLeft();
 }
 
 //* Scrollbar
@@ -175,18 +175,24 @@ document.querySelector('#sort-list').addEventListener('click', (e) => {
 // Actually sorting
 window.addEventListener('click', (e) => {
 
+	const headerTitle = document.querySelector('#header-title');
 	let tasks = document.querySelectorAll('.task');
 
 	if(e.target == sortCategories[0]){
+
+		headerTitle.innerHTML = 'Tasks';
 
 		addButton.style.display = 'block';
 
 		tasks.forEach(task => {
 			task.closest('div.task').style.display = 'flex';
 		})
+		
 	}
 
 	else if(e.target == sortCategories[1]){
+
+		headerTitle.innerHTML = 'Active tasks';
 
 		addButton.style.display = 'none';
 
@@ -201,6 +207,8 @@ window.addEventListener('click', (e) => {
 	}
 
 	else if(e.target == sortCategories[2]){
+
+		headerTitle.innerHTML = 'Done tasks';
 
 		addButton.style.display = 'none';
 
