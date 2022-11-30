@@ -7,12 +7,7 @@ const taskDescriptionInput = document.querySelector('#add-task__description');
 const main = document.querySelector('#main');
 
 let tasksCount;
-if(localStorage.getItem('tasksleft')){
-	tasksCount  = localStorage.getItem('tasksleft');
-}
-else{
-	tasksCount = 0;
-}
+localStorage.getItem('tasksleft') ? tasksCount  = localStorage.getItem('tasksleft') : tasksCount = 0;
 
 let taskCheckboxCount = 0;
 
@@ -93,7 +88,6 @@ function init() {
 
 //* Scrollbar
 function addScrollbar(){
-
 	if(tasks.clientHeight >= 500){
 		main.classList.add('scroll');	
 	}
@@ -259,3 +253,4 @@ document.querySelectorAll('.task__checkbox').forEach((element) => {
 		element.checked = true;
 	}
 });
+addScrollbar();
