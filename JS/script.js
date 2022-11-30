@@ -6,7 +6,13 @@ const taskDescriptionInput = document.querySelector('#add-task__description');
 
 const main = document.querySelector('#main');
 
-let tasksCount = 0;
+let tasksCount;
+if(localStorage.getItem('tasksleft')){
+	tasksCount  = localStorage.getItem('tasksleft');
+}
+else{
+	tasksCount = 0;
+}
 
 let taskCheckboxCount = 0;
 
@@ -82,6 +88,7 @@ function init() {
 
 	tasksCount++;
 	tasksLeft();
+	saveToLS();
 }
 
 //* Scrollbar
@@ -90,21 +97,20 @@ function addScrollbar(){
 	if(tasks.clientHeight >= 500){
 		main.classList.add('scroll');	
 	}
+	else{
+		main.classList.remove('scroll');
+	}
 
 	taskTitleInput.value = '';
 	taskDescriptionInput.value = '';
 }
-function removeScrollbar(){
-	if(tasks.clientHeight < 500){
-		main.classList.remove('scroll');
-	}
-}
 
 //* Highlight done task
 window.addEventListener('click', function(e){
-	document.querySelectorAll('.task__checkbox').forEach(function(element){
+	document.querySelectorAll('.task__checkbox').forEach((element) => {
 		if(e.target == element){
-			element.nextElementSibling.classList.toggle('done');
+			element.checked ? element.nextElementSibling.classList.add('done') : element.nextElementSibling.classList.remove('done');
+			
 
 			let allTasks = document.querySelectorAll('.task');
 			let doneTasks = document.querySelectorAll('.done');
@@ -112,8 +118,8 @@ window.addEventListener('click', function(e){
 			let activeTasksLeft = allTasks.length - doneTasks.length;
 			tasksCount = activeTasksLeft;
 			tasksLeft();
+			saveToLS();
 		}
-
 	})
 })
 
@@ -126,10 +132,12 @@ window.addEventListener('click', function(e){
 			if(element.parentElement.parentElement.previousElementSibling.firstElementChild.
 				lastElementChild.classList.contains('done')){
 					tasksLeft()
+					saveToLS();
 			}
 			else{
 				tasksCount--;
 				tasksLeft()
+				saveToLS();
 			}
 		}
 	})
@@ -138,20 +146,23 @@ document.querySelector('#clear-button').addEventListener('click', () => {
 	document.querySelectorAll('.done').forEach(el => {
 		el.closest('div.task').remove();
 
-		removeScrollbar()
+		addScrollbar();
 
-		tasksLeft()
+		tasksLeft();
+		saveToLS();
 	})
 })
 
 //* Tasks left
 let footerTasksLeft = document.querySelector('#tasks-left');
 function tasksLeft(){
+	localStorage.setItem('tasksleft', tasksCount);
+	let tasksLeftLS = localStorage.getItem('tasksleft');
 	if(tasksCount == 1){
-		footerTasksLeft.innerHTML = `${tasksCount} item left`;
+		footerTasksLeft.innerHTML = `${tasksLeftLS} item left`;
 	}
 	else{
-		footerTasksLeft.innerHTML = `${tasksCount} items left`;
+		footerTasksLeft.innerHTML = `${tasksLeftLS} items left`;
 	}
 }
 tasksLeft();
@@ -238,3 +249,13 @@ window.addEventListener('click', (e) => {
 		})
 	}
 })
+
+function saveToLS(){
+	localStorage.setItem('tasks', tasks.innerHTML);
+}
+if(localStorage.getItem('tasks')) tasks.innerHTML = localStorage.getItem('tasks');
+document.querySelectorAll('.task__checkbox').forEach((element) => {
+	if(element.nextElementSibling.classList.contains('done')){
+		element.checked = true;
+	}
+});
