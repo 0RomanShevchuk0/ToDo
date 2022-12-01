@@ -12,66 +12,66 @@
 </head>
 <body>
 	<div class="wrapper">
+		<div class="content">
+			<main class="main" id="main">
 
-		<main class="main" id="main">
-
-			<!--? Header -->
-			<div class="main__header header-main">
-				<div class="header-main__container">
-					<div class="header-main__body">
-						<h1 class="header-main__title" id="header-title">Tasks</h1>
-					</div>
-				</div>
-			</div>
-			
-			<!--? Tasks -->
-			<section class="main__tasks tasks">
-				<div class="tasks__container">
-					<div class="tasks__body" id="tasks"></div>
-				</div>
-			</section>
-
-			<section class="main__task-add add-task">
-				<div class="add-task__container">
-					<div class="add-task__body">
-						
-						<!--? Add button -->
-						<div class="add-task__button-elements">
-							<h3 class="add-task__button" id="add-task-button"> <span class="add-task__cross">
-								<i class="fa-light fa-plus"></i></span> Add task</h3>
+				<!--? Header -->
+				<div class="main__header header-main">
+					<div class="header-main__container">
+						<div class="header-main__body">
+							<h1 class="header-main__title" id="header-title">Tasks</h1>
 						</div>
-
-						<!--? Active add form -->
-						<div class="add-task__form" id="add-task__form">
-							<div class="add-task__form-inner">
-								<input class="add-task__title" id="add-task__title" type="text" placeholder="Task name">
-								<textarea class="add-task__description" id="add-task__description" type="text" placeholder="Description"></textarea>
-							</div>
-							<div class="add-task__buttons">
-								<button class="add-task__cansel-button" id="add-task__cansel-button">Cansel</button>
-								<button class="add-task__add-button" id="add-task__add-button">Add task</button>
-							</div>
-						</div>
-
 					</div>
 				</div>
-			</section>
-		</main>
-
-		<footer class="footer">
-				<div class="footer__body">
-					<div class="footer__tasks-left" id="tasks-left"></div>
-					<div class="footer__tasks-sort">
-						<ul class="footer__sort-list" id="sort-list">
-							<li class="footer__sort-category" id="sort-categoty">All</li>
-							<li class="footer__sort-category" id="sort-categoty">Active</li>
-							<li class="footer__sort-category" id="sort-categoty">Complited</li>
-						</ul>
+				
+				<!--? Tasks -->
+				<section class="main__tasks tasks">
+					<div class="tasks__container">
+						<div class="tasks__body" id="tasks"></div>
 					</div>
-					<button class="footer__clear-button" id="clear-button">Clear completed</button>
-				</div>				
-		</footer>
+				</section>
 
-	</div>
+				<section class="main__task-add add-task">
+					<div class="add-task__container">
+						<div class="add-task__body">
+							
+							<!--? Add button -->
+							<div class="add-task__button-elements">
+								<h3 class="add-task__button" id="add-task-button"> <span class="add-task__cross">
+									<i class="fa-light fa-plus"></i></span> Add task</h3>
+							</div>
+
+							<!--? Active add form -->
+							<div class="add-task__form" id="add-task__form">
+								<div class="add-task__form-inner">
+									<input class="add-task__title" id="add-task__title" type="text" placeholder="Task name">
+									<textarea class="add-task__description" id="add-task__description" type="text" placeholder="Description"></textarea>
+								</div>
+								<div class="add-task__buttons">
+									<button class="add-task__cansel-button" id="add-task__cansel-button">Cansel</button>
+									<button class="add-task__add-button" id="add-task__add-button">Add task</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="footer">
+					<div class="footer__body">
+						<div class="footer__tasks-left" id="tasks-left"></div>
+						<div class="footer__tasks-sort">
+							<ul class="footer__sort-list" id="sort-list">
+								<li class="footer__sort-category" id="sort-categoty">All</li>
+								<li class="footer__sort-category" id="sort-categoty">Active</li>
+								<li class="footer__sort-category" id="sort-categoty">Complited</li>
+							</ul>
+						</div>
+						<button class="footer__clear-button" id="clear-button">Clear completed</button>
+					</div>
+			</footer>
+		</div>
+	</div> 
 </body>
 </html>
