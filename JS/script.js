@@ -9,7 +9,8 @@ const main = document.querySelector('#main');
 let tasksCount;
 localStorage.getItem('tasksleft') ? tasksCount  = localStorage.getItem('tasksleft') : tasksCount = 0;
 
-let taskCheckboxCount = 0;
+let taskCheckboxCount;
+localStorage.getItem('taskCheckboxCount') ? taskCheckboxCount  = localStorage.getItem('taskCheckboxCount') : taskCheckboxCount = 0;
 
 //* Add task button
 addButton.addEventListener('click', () => {
@@ -88,11 +89,29 @@ function init() {
 
 //* Scrollbar
 function addScrollbar(){
-	if(tasks.clientHeight >= 500){
-		main.classList.add('scroll');	
+	if(document.documentElement.clientWidth > 850){
+		if(tasks.clientHeight >= 500){
+			main.classList.add('scroll');	
+		}
+		else{
+			main.classList.remove('scroll');
+		}
 	}
-	else{
-		main.classList.remove('scroll');
+	else if(document.documentElement.clientWidth < 850 && document.documentElement.clientWidth > 480){
+		if(tasks.clientHeight >=390){
+			main.classList.add('scroll');	
+		}
+		else{
+			main.classList.remove('scroll');
+		}
+	}
+	else {
+		if(tasks.clientHeight >=400){
+			main.classList.add('scroll');	
+		}
+		else{
+			main.classList.remove('scroll');
+		}
 	}
 
 	taskTitleInput.value = '';
@@ -125,13 +144,15 @@ window.addEventListener('click', function(e){
 
 			if(element.parentElement.parentElement.previousElementSibling.firstElementChild.
 				lastElementChild.classList.contains('done')){
-					tasksLeft()
+					tasksLeft();
 					saveToLS();
+					addScrollbar();
 			}
 			else{
 				tasksCount--;
 				tasksLeft()
 				saveToLS();
+				addScrollbar();
 			}
 		}
 	})
@@ -150,6 +171,7 @@ document.querySelector('#clear-button').addEventListener('click', () => {
 //* Tasks left
 let footerTasksLeft = document.querySelector('#tasks-left');
 function tasksLeft(){
+	localStorage.setItem('taskCheckboxCount', taskCheckboxCount);
 	localStorage.setItem('tasksleft', tasksCount);
 	let tasksLeftLS = localStorage.getItem('tasksleft');
 	if(tasksCount == 1){
