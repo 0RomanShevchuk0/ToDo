@@ -106,7 +106,7 @@ function addScrollbar(){
 		}
 	}
 	else {
-		if(tasks.clientHeight >=260){
+		if(tasks.clientHeight >=250){
 			main.classList.add('scroll');	
 		}
 		else{
